@@ -5,6 +5,7 @@ type Query{
 
 type Mutation {
     addImage(path:String, description:String, index:Int,url:String):Image
+    updateImage(path:String, id:ID, date:String, description:String, index: Int):Image
 }
 type Image {
     id:ID
