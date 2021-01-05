@@ -1,27 +1,13 @@
 const db = require("../../DbConfiguration");
+const getImages = require("../resolvers/queries/getImage");
+const addImage = require("../resolvers/mutations/addImage");
 
 const resolvers = {
   Query: {
-    getImages: async (_, { path }) => {
-      let imageArray = [];
-      db.ref(path).on("value", (snapshot) => {
-        const data = snapshot.val();
-        imageArray = Object.values(data);
-      });
-      return imageArray;
-    },
+    getImages,
   },
   Mutation: {
-    addImage: async (_, { path, description, index, url }) => {
-      const newImage = {
-        id: url,
-        date: Date.now(),
-        description: description,
-        index: index,
-      };
-      db.ref(path + url).set(newImage);
-      return newImage;
-    },
+    addImage,
   },
 };
 
