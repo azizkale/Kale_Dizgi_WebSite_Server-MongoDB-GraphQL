@@ -7,7 +7,7 @@ const addImage = async (_, { path, description, index, url }) => {
     description: description,
     index: index,
   };
-  db.ref(path + url).set(newImage);
+  db.ref(path + "/" + url).set(newImage);
   return newImage;
 };
 module.exports = addImage;
