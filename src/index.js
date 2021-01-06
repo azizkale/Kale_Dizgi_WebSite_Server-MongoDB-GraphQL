@@ -4,4 +4,7 @@ const typeDefs = require("./schema/typeDefs");
 
 const server = new GraphQLServer({ typeDefs, resolvers });
 
-server.start({ port: 4002 });
+const port = 4002;
+server.start({ port: port }, () =>
+  console.log(`Server runs on http://localhost:${port}`)
+);
