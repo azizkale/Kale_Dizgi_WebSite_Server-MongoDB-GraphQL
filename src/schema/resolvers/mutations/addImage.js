@@ -1,15 +1,9 @@
 const db = require("../../../DbConfiguration");
 
 const addImage = async (_, { path, image }) => {
-  console.log(image);
-  console.log(JSON.parse(image));
-  // const newImage = {
-  //   id: url,
-  //   date: Date.now(),
-  //   description: description,
-  //   index: index,
-  // };
-  // db.ref(path + "/" + url).set(newImage);
-  // return newImage;
+  const imageObj = JSON.parse(image);
+  imageObj.id = db.ref().push().key;
+  db.ref(path + "/" + imageObj.id).set(imageObj);
+  return imageObj;
 };
 module.exports = addImage;
