@@ -1,7 +1,7 @@
 const typeDefs = `
 type Query{
     getImages(path: String!):[Image]
-    getGalleryInfos(path: String!):[Gallery!]
+    getGalleryInfos:[Gallery!]
     getUsers(path: String!):[User]
 }
 
@@ -13,8 +13,9 @@ type Mutation {
 }
 type Image {
     id:ID
-    date: String
+    url: String
     description: String
+    date: String   
     index: Int
 }
 
