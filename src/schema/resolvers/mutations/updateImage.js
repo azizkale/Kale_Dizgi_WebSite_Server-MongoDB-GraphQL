@@ -1,12 +1,9 @@
 const db = require("../../../DbConfiguration");
 
-const updateImage = async (_, { path, url, description, date, index }) => {
-  const updatedImage = {
-    date: date,
-    description: description,
-    index: index,
-  };
-  db.ref(path + url).update(updatedImage);
+const updateImage = async (_, { path, image }) => {
+  const updatedImage = JSON.parse(image);
+
+  db.ref(path).update(updatedImage);
   return updatedImage;
 };
 

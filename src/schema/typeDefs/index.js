@@ -8,8 +8,8 @@ type Query{
 type Mutation {
     addImage(path:String, image:String):Image
     addGallery(path: String, gallery: String): Gallery
-    updateImage(path:String, url:ID, description:String, date:String, index: Int):Image
-    deleteImage(path: String, url: String):String
+    updateImage(path:String!, image: String!):Image
+    deleteImage(path: String!, id: ID!):String
 }
 type Image {
     id:ID
