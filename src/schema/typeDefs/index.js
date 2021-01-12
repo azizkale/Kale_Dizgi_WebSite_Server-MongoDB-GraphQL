@@ -11,6 +11,7 @@ type Mutation {
     deleteImage(path: String!, id: ID!):String
     addGallery(path: String, gallery: String): Gallery
     deleteGallery(path: String!, id:ID!): String
+    updateGallery(path: String!, gallery: String): Gallery
 }
 type Image {
     id:ID
