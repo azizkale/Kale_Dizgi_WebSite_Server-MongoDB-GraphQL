@@ -1,15 +1,8 @@
-const db = require("../../../DbConfiguration");
+const Image = require("../../../DbModels/Images");
 
-const deleteImage = async (_, { path, id }) => {
-  return db
-    .ref(path + id)
-    .remove()
-    .then(() => {
-      return true;
-    })
-    .catch((error) => {
-      return error;
-    });
+const deleteImage = async (_, { id }) => {
+  const result = await Image.deleteOne({ _id: id });
+  return result["ok"];
 };
 
 module.exports = deleteImage;
