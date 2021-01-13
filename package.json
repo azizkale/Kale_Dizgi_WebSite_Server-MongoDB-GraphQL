@@ -12,8 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "firebase": "^8.2.1",
     "graphql-yoga": "^1.18.3",
+    "heroku": "^7.47.7",
     "jwt-decode": "^3.1.2",
     "mongoose": "^5.11.11",
     "nodemon": "^2.0.6"
