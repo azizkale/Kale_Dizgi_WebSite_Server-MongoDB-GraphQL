@@ -6,10 +6,10 @@ type Query{
 }
 
 type Mutation {
-    addImage(id:ID, description:String, url:String, index:Int, galleryId:ID, date:String):Image
+    addImage(image:String):Image
     updateImage(path:String!, image: String!):Image
     deleteImage(path: String!, id: ID!):String
-    addGallery(path: String, gallery: String): Gallery
+    addGallery(gallery: String): Gallery
     deleteGallery(path: String!, id:ID!): String
     updateGallery(path: String!, gallery: String): Gallery
 }

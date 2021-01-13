@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const Gallery = {
-  id: String,
   backGroungImageUrl: String,
   fontColor: String,
   fontFamily: String,
@@ -10,4 +9,4 @@ const Gallery = {
   googleFontLink: String,
 };
 
-module.exports = mongoose.model("Galleries", Gallery);
+module.exports = mongoose.model("Gallery", Gallery);

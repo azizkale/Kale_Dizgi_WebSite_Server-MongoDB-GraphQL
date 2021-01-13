@@ -1,6 +1,29 @@
 const db = require("../../../DbConfiguration");
+const Gallery = require("../../../DbModels/Gallery");
 
-const addGallery = async (_, { path, gallery }) => {
+const addGallery = async (_, { gallery }) => {
+  const gal = JSON.parse(gallery);
+
+  const {
+    backGroungImageUrl,
+    fontColor,
+    fontFamily,
+    fontSize,
+    galleryTitle,
+    googleFontLink,
+  } = gal;
+
+  const newGallery = new Gallery({
+    backGroungImageUrl,
+    fontColor,
+    fontFamily,
+    fontSize,
+    galleryTitle,
+    googleFontLink,
+  });
+  await newGallery.save();
+  return newGallery;
+
   //converts coming as string gallery to JSON format
   const galleryObj = JSON.parse(gallery);
 

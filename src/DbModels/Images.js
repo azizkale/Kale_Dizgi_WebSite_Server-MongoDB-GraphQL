@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const Image = {
-  id: String,
   url: String,
   description: String,
   date: String,
@@ -9,4 +8,4 @@ const Image = {
   galleryId: String,
 };
 
-module.exports = mongoose.model("Images", Image);
+module.exports = mongoose.model("Image", Image);
