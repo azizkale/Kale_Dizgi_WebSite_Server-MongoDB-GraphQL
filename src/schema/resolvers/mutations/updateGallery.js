@@ -1,9 +1,14 @@
-const db = require("../../../DbConfiguration");
+const Gallery = require("../../../DbModels/Gallery");
 
-const updateGallery = async (_, { path, gallery }) => {
+const updateGallery = async (_, { id, gallery }) => {
   const updatedGallery = JSON.parse(gallery);
 
-  db.ref(path).update(updatedGallery);
+  const result = await Gallery.updateOne(
+    { _id: id },
+    {
+      $set: updatedGallery,
+    }
+  );
   return updatedGallery;
 };
 

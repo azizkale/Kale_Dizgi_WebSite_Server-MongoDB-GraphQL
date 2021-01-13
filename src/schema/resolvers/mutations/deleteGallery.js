@@ -6,9 +6,8 @@ const deleteGallery = async (_, { id }) => {
   const result = await Gallery.deleteOne({ _id: id });
   // deletes images of the gallery
   const result2 = await Image.deleteMany({
-    galleryId: "5ffedc4d2fa76d2818d5ffd8",
+    galleryId: id,
   });
-
   return result["ok"];
 };
 
