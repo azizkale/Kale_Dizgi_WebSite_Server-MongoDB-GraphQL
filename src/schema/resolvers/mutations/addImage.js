@@ -1,4 +1,3 @@
-const db = require("../../../DbConfiguration");
 const Image = require("../../../DbModels/Images");
 
 const addImage = async (_, { image }) => {

@@ -1,11 +1,7 @@
-const db = require("../../../DbConfiguration");
+const Gallery = require("../../../DbModels/Gallery");
 
 const getGalleryInfos = async () => {
-  let galleryInfoArray = [];
-  db.ref("Galleries").on("value", (snapshot) => {
-    const data = snapshot.val();
-    galleryInfoArray = Object.values(data);
-  });
+  const galleryInfoArray = await Gallery.find();
   return galleryInfoArray;
 };
 

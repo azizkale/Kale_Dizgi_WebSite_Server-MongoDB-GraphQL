@@ -1,4 +1,3 @@
-const db = require("../../../DbConfiguration");
 const Gallery = require("../../../DbModels/Gallery");
 
 const addGallery = async (_, { gallery }) => {

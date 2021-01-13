@@ -1,6 +1,6 @@
 const typeDefs = `
 type Query{
-    getImages(path: String!):[Image]
+    getImages(galleryID: String!):[Image]
     getGalleryInfos:[Gallery!]
     getUsers(path: String!):[User]
 }
