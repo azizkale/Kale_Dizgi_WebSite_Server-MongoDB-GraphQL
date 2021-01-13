@@ -1,7 +1,8 @@
 const db = require("../../../DbConfiguration");
 
 const deleteImage = async (_, { path, id }) => {
-  db.ref(path + id)
+  return db
+    .ref(path + id)
     .remove()
     .then(() => {
       return true;
