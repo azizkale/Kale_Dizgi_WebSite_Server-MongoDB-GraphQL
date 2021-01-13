@@ -13,5 +13,5 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
 
 const server = new GraphQLServer({ typeDefs, resolvers });
 
-const port = 4002;
+// const port = 4002;
 server.start();
