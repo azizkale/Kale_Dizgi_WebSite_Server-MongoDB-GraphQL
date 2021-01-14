@@ -6,7 +6,7 @@ const typeDefs = require("./schema/typeDefs");
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING2, {
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
