@@ -13,6 +13,4 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
 
 const server = new GraphQLServer({ typeDefs, resolvers });
 
-server.start(() =>
-  console.log(`Server started, listening on port  for incoming requests.`)
-);
+server.start();
