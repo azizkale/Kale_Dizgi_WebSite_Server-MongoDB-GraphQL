@@ -7,6 +7,7 @@ const updateGallery = require("../resolvers/mutations/updateGallery");
 const updateImage = require("../resolvers/mutations/updateImage");
 const deleteImage = require("../resolvers/mutations/deleteImage");
 const deleteGallery = require("../resolvers/mutations/deleteGallery");
+const addMessage = require("../resolvers/mutations/addMessage");
 
 const resolvers = {
   Query: {
@@ -21,6 +22,7 @@ const resolvers = {
     addGallery,
     updateGallery,
     deleteGallery,
+    addMessage,
   },
 };
 

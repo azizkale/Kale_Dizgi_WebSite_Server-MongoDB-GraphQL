@@ -12,6 +12,8 @@ type Mutation {
     addGallery(gallery: String): Gallery
     deleteGallery(id:ID!): String
     updateGallery(id: ID!, gallery: String): Gallery
+    addMessage(message: String!):Message
+    deleteMessage(id: String): String
 }
 type Image {
     id:ID
@@ -37,6 +39,13 @@ type User {
     userName: String
 }
 
+type Message{
+    id:ID
+    name: String
+    mail: String
+    date: String
+    message: String
+}
 
 `;
 
