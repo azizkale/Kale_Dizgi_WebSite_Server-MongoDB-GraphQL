@@ -6,12 +6,13 @@ const typeDefs = require("./schema/typeDefs");
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING2, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
 const server = new GraphQLServer({ typeDefs, resolvers });
 
-// const port = 4002;
-server.start();
+server.start(() =>
+  console.log(`Server started, listening on port  for incoming requests.`)
+);
